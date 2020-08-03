@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function red_stamps()
+    {
+        return $this->hasMany('App\RedStamp');
+    }
+
+    public function followings()
+    {
+        return $this->belongsToMany('App\User', 'follows', 'user_id', 'follow_user_id')->withTimestamps();
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany('App\User', 'follows', 'follow_user_id', 'user_id')->withTimestamps();
+    }
 }
