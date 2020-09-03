@@ -19,9 +19,9 @@ class LoginController extends Controller
             return response()->json(Auth::user(), 200);
         }
 
-        throw ValidationException::withMessages([
-            'email' => ['The provided credentials are incorrect']
-        ]);
+        // throw ValidationException::withMessages([
+        //     'email' => ['The provided credentials are incorrect']
+        // ]);
     }
 
     public function logout()
