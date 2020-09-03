@@ -43,7 +43,7 @@ return [
 
         'beanstalkd' => [
             'driver' => 'beanstalkd',
-            'host' => 'localhost',
+            'host' => 'http://kaneko-redstamp.s3-website-ap-northeast-1.amazonaws.com',
             'queue' => 'default',
             'retry_after' => 90,
             'block_for' => 0,
