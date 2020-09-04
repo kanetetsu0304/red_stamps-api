@@ -9,7 +9,13 @@ class UsersController extends Controller
 {
     public function index()
     {
-        return User::orderBy('name', 'desc')->get();
+        return User::orderBy('created_at', 'desc')->get();
+        
+    }
+
+    public function indexAsc()
+    {
+        return User::orderBy('created_at', 'asc')->get();
         
     }
 

@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // ログインしているユーザのみアクセスOKのルート
     Route::post('/redstamps', 'RedStampController@store');
     Route::get('/redstamps', 'RedStampController@index');
+    Route::get('/redstampsAsc', 'RedStampController@indexAsc');
     Route::get('/redstamps/{id}', 'RedStampController@show');
     Route::put('/redstamps/{id}', 'RedStampController@update');
     Route::delete('/redstamps/{id}', 'RedStampController@destroy');
@@ -34,6 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/sanctuaries', 'SanctuaryController@index');
 
     Route::get('/users', 'UsersController@index');
+    Route::get('/usersAsc', 'UsersController@indexAsc');
     Route::get('/users/{id}', 'UsersController@show');
     Route::get('/usersRedstamps/{id}', 'RedStampController@usersIndex');
     Route::get('/usersRedstamps/{userId}/{id}', 'RedStampController@usersShow');

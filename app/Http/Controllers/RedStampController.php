@@ -31,6 +31,10 @@ class RedStampController extends Controller
     {
         return RedStamp::with('user', 'sanctuary')->where('user_id', Auth::id())->orderBy('date', 'desc')->get();
     }
+    public function indexAsc()
+    {
+        return RedStamp::with('user', 'sanctuary')->where('user_id', Auth::id())->orderBy('date', 'asc')->get();
+    }
 
     public function usersIndex($id)
     {

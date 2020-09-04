@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://kaneko-redstamp.s3-website-ap-northeast-1.amazonaws.com'),
+    'url' => env('APP_URL', 'https://redstamp.naoya-sawaguchi.jp'),
 
     'asset_url' => env('ASSET_URL', null),
 

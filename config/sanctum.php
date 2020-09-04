@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'http://kaneko-redstamp.s3-website-ap-northeast-1.amazonaws.com,127.0.0.1,127.0.0.1:8000,::1')),
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'https://redstamp.naoya-sawaguchi.jp,127.0.0.1,127.0.0.1:8000,::1')),
 
     /*
     |--------------------------------------------------------------------------

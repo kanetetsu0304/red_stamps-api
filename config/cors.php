@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://kaneko-redstamp.s3-website-ap-northeast-1.amazonaws.com'],
+    'allowed_origins' => ['https://redstamp.naoya-sawaguchi.jp'],
 
     'allowed_origins_patterns' => [],
 
