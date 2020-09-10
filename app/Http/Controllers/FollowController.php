@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Follow;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,21 +19,27 @@ class FollowController extends Controller
         return response()->json($follow);
     }
 
-    public function destroy($id)
+    public function destroy($userId,$followUserId)
     {
-        $redstamp = Follow::find($id);
-        $redstamp->delete();
+        $follow = Follow::where('user_id', $userId)->where('follow_user_id', $followUserId)->first();
+        $follow->delete();
     }
 
     public function followings(string $id)
     {
-       return Follow::where('user_id', $id)->get();
+       return Follow::where('user_id', $id)->orderBy('id', 'desc')->get();
 
     }
     
     public function followers(string $id)
     {
-       return Follow::where('follow_user_id', $id)->get();
+       return Follow::where('follow_user_id', $id)->orderBy('id', 'desc')->get();
+    }
+
+    public function followed(string $userId, string $followUserId)
+    {
+       return Follow::where('user_id', $userId)->where('follow_user_id', $followUserId)->first();
+
     }
 
 

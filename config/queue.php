@@ -43,7 +43,7 @@ return [
 
         'beanstalkd' => [
             'driver' => 'beanstalkd',
-            'host' => 'https://redstamp.naoya-sawaguchi.jp',
+            'host' => 'http://localhost:8080',
             'queue' => 'default',
             'retry_after' => 90,
             'block_for' => 0,
@@ -53,7 +53,7 @@ return [
             'driver' => 'sqs',
             'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'prefix' => env('SQS_PREFIX', 'https://redstamp.naoya-sawaguchi.jp'),
+            'prefix' => env('SQS_PREFIX', 'http://localhost:8080'),
             'queue' => env('SQS_QUEUE', 'your-queue-name'),
             'suffix' => env('SQS_SUFFIX'),
             'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),

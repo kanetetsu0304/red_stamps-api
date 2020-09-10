@@ -9,6 +9,6 @@ class SanctuaryController extends Controller
 {
     public function index()
     {
-        return Sanctuary::orderBy('name', 'desc')->get();
+        return Sanctuary::with('prefecture')->get();
     }
 }

@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://redstamp.naoya-sawaguchi.jp'),
+    'url' => env('APP_URL', 'http://localhost:8080/'),
 
     'asset_url' => env('ASSET_URL', null),
 

@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://redstamp.naoya-sawaguchi.jp'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 

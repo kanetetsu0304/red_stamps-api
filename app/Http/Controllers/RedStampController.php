@@ -29,28 +29,33 @@ class RedStampController extends Controller
 
     public function index()
     {
-        return RedStamp::with('user', 'sanctuary')->where('user_id', Auth::id())->orderBy('date', 'desc')->get();
+        return RedStamp::with('user', 'sanctuary.prefecture')->where('user_id', Auth::id())->orderBy('date', 'desc')->get();
     }
     public function indexAsc()
     {
-        return RedStamp::with('user', 'sanctuary')->where('user_id', Auth::id())->orderBy('date', 'asc')->get();
+        return RedStamp::with('user', 'sanctuary.prefecture')->where('user_id', Auth::id())->orderBy('date', 'asc')->get();
     }
 
     public function usersIndex($id)
     {
-        return RedStamp::with('user', 'sanctuary')->where('user_id', $id)->orderBy('date', 'desc')->get();
+        return RedStamp::with('user', 'sanctuary.prefecture')->where('user_id', $id)->orderBy('date', 'desc')->get();
+    }
+
+    public function usersIndexAsc($id)
+    {
+        return RedStamp::with('user', 'sanctuary.prefecture')->where('user_id', $id)->orderBy('date', 'asc')->get();
     }
 
     public function show(string $id)
     {
-        $redstamp = RedStamp::with('user', 'sanctuary')->where('user_id', Auth::id())->where('id', $id)->with('user', 'sanctuary')->first();
+        $redstamp = RedStamp::with('user', 'sanctuary.prefecture')->where('user_id', Auth::id())->where('id', $id)->first();
 
         return $redstamp ?? abort(404);
     }
 
     public function usersShow(string $userId, string $id)
     {
-        $redstamp = RedStamp::with('user', 'sanctuary')->where('user_id', $userId)->where('id', $id)->with('user', 'sanctuary')->first();
+        $redstamp = RedStamp::with('user', 'sanctuary.prefecture')->where('user_id', $userId)->where('id', $id)->first();
 
         return $redstamp ?? abort(404);
     }
