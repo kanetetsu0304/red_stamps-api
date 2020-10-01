@@ -27,13 +27,24 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/redstamps/{id}', 'RedStampController@update');
     Route::delete('/redstamps/{id}', 'RedStampController@destroy');
 
+    // Route::get('/redstampsTokyo/{id}', 'RedStampController@indexTokyo');
+    // Route::get('/redstampsKyoto/{id}', 'RedStampController@indexKyoto');
+
     Route::post('/users/follow', 'FollowController@store');
     Route::delete('/users/unfollow/{userId}/{followUserId}', 'FollowController@destroy');
     Route::get('/users/followings/{id}', 'FollowController@followings');
     Route::get('/users/followers/{id}', 'FollowController@followers');
     Route::get('/users/followed/{userId}/{followUserId}', 'FollowController@followed');
+    Route::get('/users/countfollowings/{id}', 'FollowController@countFollowings');
+Route::get('/users/countfollowers/{id}', 'FollowController@countFollowers');
 
-    Route::get('/sanctuaries', 'SanctuaryController@index');
+
+    Route::get('/sanctuariesAsc', 'SanctuaryController@indexAsc');
+    Route::get('/sanctuariesDesc', 'SanctuaryController@indexDesc');
+    Route::get('/sanctuariesTokyo', 'SanctuaryController@indexTokyo');
+    Route::get('/sanctuariesKyoto', 'SanctuaryController@indexKyoto');
+    Route::get('/usersSanctuariesAsc/{id}', 'SanctuaryController@usersIndexAsc');
+Route::get('/usersSanctuariesDesc/{id}', 'SanctuaryController@usersIndexDesc');
 
     Route::get('/users', 'UsersController@index');
     Route::get('/usersAsc', 'UsersController@indexAsc');
@@ -41,6 +52,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/usersRedstamps/{id}', 'RedStampController@usersIndex');
     Route::get('/usersRedstampsAsc/{id}', 'RedStampController@usersIndexAsc');
     Route::get('/usersRedstamps/{userId}/{id}', 'RedStampController@usersShow');
+
+    Route::get('/redstampBook', 'RedStampBookController@index');
+    Route::post('/redstampBook', 'RedStampBookController@store');
+    Route::put('/redstampBook/{id}', 'RedStampBookController@update');
+    Route::get('/usersRedstampBook/{id}', 'RedStampBookController@usersIndex');
 });
 
 Route::post('/register', 'RegisterController@register');
@@ -54,3 +70,19 @@ Route::post('/logout', 'LoginController@logout');
 
 
 // Route::delete('/users/unfollow/{userId}/{followUserId}', 'FollowController@destroy');
+// Route::get('/users/countfollowings/{id}', 'FollowController@countFollowings');
+// Route::get('/users/countfollowers/{id}', 'FollowController@countFollowers');
+
+
+// Route::post('/users/follow', 'FollowController@store');
+// Route::delete('/users/unfollow/{userId}/{followUserId}', 'FollowController@destroy');
+// Route::get('/users/followings/{id}', 'FollowController@followings');
+// Route::get('/users/followers/{id}', 'FollowController@followers');
+// Route::get('/users/followed/{userId}/{followUserId}', 'FollowController@followed');
+
+// Route::get('/redstampsAreaAsc', 'RedStampController@indexAreaAsc');
+
+// Route::get('/sanctuariesAsc', 'SanctuaryController@indexAsc');
+// Route::get('/usersSanctuariesAsc/{id}', 'SanctuaryController@usersIndexAsc');
+Route::get('/redstampsTokyo/{id}', 'RedStampController@indexTokyo');
+    Route::get('/redstampsKyoto/{id}', 'RedStampController@indexKyoto');

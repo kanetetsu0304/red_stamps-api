@@ -15,6 +15,11 @@ class Sanctuary extends Model
         return $this->hasMany('App\RedStamp');
     }
 
+    public function red_stamp_books()
+    {
+        return $this->hasOne('App\RedStampBook');
+    }
+
     public function prefecture()
     {
         return $this->belongsTo('App\Prefecture');

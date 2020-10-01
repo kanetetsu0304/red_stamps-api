@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasMany('App\RedStamp');
     }
 
+    public function red_stamp_books()
+    {
+        return $this->hasMany('App\RedStamp');
+    }
+
     // public function followings()
     // {
     //     return $this->belongsToMany('App\User', 'follows', 'user_id', 'follow_user_id')->withTimestamps();

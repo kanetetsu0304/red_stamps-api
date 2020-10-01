@@ -42,5 +42,15 @@ class FollowController extends Controller
 
     }
 
+    public function countFollowings(string $id)
+    {
+       return Follow::where('user_id', $id)->count();
+    }
+
+    public function countFollowers(string $id)
+    {
+       return Follow::where('follow_user_id', $id)->count();
+    }
+
 
 }
